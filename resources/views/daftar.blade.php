@@ -9,6 +9,9 @@
     <link href="/file daftar/daftar.css" rel="stylesheet">
 </head>
 
+
+
+
 <body>
     <section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
@@ -33,12 +36,7 @@
                                         <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        
-                                        <label class="form-label" for="form3Example4cdg">Tulis Kembali Kata Sandi</label>
-                                        <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                                    </div>
-
+                                   
 
                                     <div class="d-flex justify-content-center">
                                         <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
