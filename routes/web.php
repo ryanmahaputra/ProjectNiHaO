@@ -21,3 +21,4 @@ Route::get('/home', function () {
 Route::get('/daftar', function () {
     return view('daftar');
 });
+
