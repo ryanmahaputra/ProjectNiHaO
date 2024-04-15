@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Poppins';
     height: 100vh;
-    background: linear-gradient(to right, #ffb0b0, #8f6363);
+    background: linear-gradient(to right, #ffa4a4, #8f6363);
     display: flex;
     justify-content: center;
     align-items: center;
