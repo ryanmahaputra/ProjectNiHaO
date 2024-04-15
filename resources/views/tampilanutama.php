@@ -15,20 +15,20 @@
 
     <body>
 
-        <header>
-            <div class="logo">
-                <img src="tampilanutama/headercamera.png" alt="NIHAO Logo">
-                <h1>NiHaO</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#service">Service</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+                <div class="logo">
+                    <img src="tampilanutama/headercamera.png" alt="NIHAO Logo">
+                    <h1>NiHaO</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </nav>        
+            </header>
 
  
     <div class= "gabung">

@@ -10,6 +10,7 @@ body {
 }
 
 header {
+    font-family: 'Poppins';
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,9 +18,9 @@ header {
     background-color: transparent;
     color: black;
     width: 95%;
+    height: 19%;
     position: absolute;
     top: 0;
-    
 }
 
 .logo {
@@ -31,6 +32,10 @@ header {
     width: 60px;
     height: auto;
     margin-right: 10px;
+}
+
+nav {
+    margin-left: auto; /* Menambahkan margin-left auto */
 }
 
 nav ul {

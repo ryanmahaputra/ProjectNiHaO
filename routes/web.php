@@ -8,14 +8,9 @@ Route::get('/home', function () {
     
 });
 
-Route::get('/input', function () {
-    return view('diagnosis_input');
+Route::get('/test', function () {
+    return view('header');
 });
-
-Route::get('/daftar', function () {
-    return view('daftar');
-});
-
 
 use App\Http\Controllers\AkunController;
 
