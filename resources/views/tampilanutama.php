@@ -43,7 +43,7 @@
                     <div class="testanalisi">
                         <p><b>Analisislah sesuai dengan keinginan hati, daftar dan dapatkan fitur menarik lainnya.</b></p>
                         <p><b>
-                        <div class="buttons">
+                        <div class="tomboltampilanutama">
                                 <button><b>Registrasi</b></button>
                                 <button><b>Login</b></button>
                         </div>
