@@ -8,10 +8,12 @@ Route::get('/home', function () {
     
 });
 
-Route::get('/test', function () {
-    return view('header');
+Route::get('/input', function () {
+    return view('diagnosa_input');
 });
 
-use App\Http\Controllers\AkunController;
 
+
+
+use App\Http\Controllers\AkunController;
 Route::post('/daftar', [AkunController::class, 'store']);
