@@ -30,7 +30,8 @@
             </nav>
         </header>
 
-    <div class="main">    
+ 
+    <div class= "gabung">
         <div class="container">
             <div class='selamatdatang'>
             <p><b>Hallo selamat datang</b></p>
@@ -49,13 +50,11 @@
                 </div>            
             </div>  
         </div>
-
+    
         <div class="kamerakanan">
             <img src="\tampilanutama\kamerakanan.png" alt="Deskripsi gambar">
         </div>
-
-        </div>
-        
+    </div>  
         <script src="/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
     </body>
 
