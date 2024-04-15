@@ -30,6 +30,7 @@
             </nav>
         </header>
 
+    <div class="main">    
         <div class="container">
             <div class='selamatdatang'>
             <p><b>Hallo selamat datang</b></p>
@@ -40,7 +41,7 @@
 
                     <div class="testanalisi">
                         <p><b>Analisislah sesuai dengan keinginan hati, daftar dan dapatkan fitur menarik lainnya.</b></p>
-                    
+                        <p><b>
                         <div class="buttons">
                                 <button><b>Registrasi</b></button>
                                 <button><b>Login</b></button>
@@ -51,6 +52,8 @@
 
         <div class="kamerakanan">
             <img src="\tampilanutama\kamerakanan.png" alt="Deskripsi gambar">
+        </div>
+
         </div>
         
         <script src="/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
