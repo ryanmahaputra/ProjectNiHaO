@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/home', functio n () {
+Route::get('/home', function () {
     return view('tampilanutama');
     
 });
@@ -14,7 +14,6 @@ Route::get('/input', function () {
 
 use App\Http\Controllers\RoboflowController;
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
-
 Route::post('/process-image', [RoboflowController::class, 'processImage']);
 
 use App\Http\Controllers\AkunController;
