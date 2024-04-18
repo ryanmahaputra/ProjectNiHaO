@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoboflowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+    Route::post('/process-image', [RoboflowController::class, 'processImage']);
+Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
+    
 });
+
+Route::middleware('jwt.auth')->get('/user', function (Request $request) {
+    return $request->user();
+    
+});
+
+
+Route::post('/process-image', [RoboflowController::class, 'processImage']);
+Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);

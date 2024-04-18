@@ -12,9 +12,16 @@ Route::get('/input', function () {
     return view('diagnosa_input');
 });
 
+Route::get('/berandaadmin', function () {
+    return view('beranda_pembudidaya');
+});
+
+
+
 use App\Http\Controllers\RoboflowController;
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
 Route::post('/process-image', [RoboflowController::class, 'processImage']);
 
 use App\Http\Controllers\AkunController;
 Route::post('/daftar', [AkunController::class, 'store']);
+

@@ -9,6 +9,7 @@ class RoboflowController extends Controller
 {
     public function checkApiConnection()
     {
+        
         $url = 'https://api.roboflow.com/https://detect.roboflow.com/tilapia-diseases/1?api_key=AaxVQyfDGfG11CPPcsG1';
         $apiKey = 'AaxVQyfDGfG11CPPcsG1'; 
 
