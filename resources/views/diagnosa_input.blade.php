@@ -50,14 +50,48 @@
                 </div>
             </header>
 
-            <div class="upload-container">
-             <label for="file-upload" class="custom-file-upload">
-             <img src="\diagnosa_input\mid.png" alt="Folder Icon" width="800" height="auto" />
-            </label>
-            <input id="file-upload" type="file" style="display:none;"/>
-            </div>
+            <form id="image-form" action="/process-image" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="upload-container">
+        <label for="file-upload" class="custom-file-upload">
+            <img id="uploaded-image" src="\diagnosa_input\mid.png" alt="Folder Icon" width="800" height="auto" />
+        </label>
+        <input id="file-upload" name="image" type="file" style="display:none;"/>
+    </div>
+    <button type="submit">Process Image</button>
+</form>
 
+<script>
+    document.getElementById('file-upload').addEventListener('change', function() {
+        const file = this.files[0];
+        const reader = new FileReader();
 
-    
+        reader.onload = function(e) {
+            document.getElementById('uploaded-image').src = e.target.result;
+        }
+
+        reader.readAsDataURL(file);
+    });
+
+    document.getElementById('image-form').addEventListener('submit', function(e) {
+        e.preventDefault()  ;
+
+        const formData = new FormData(this);
+
+        fetch('/process-image', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            // show hasil
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+
         </body>
         </html>
