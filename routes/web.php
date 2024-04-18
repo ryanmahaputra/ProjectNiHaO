@@ -12,10 +12,13 @@ Route::get('/input', function () {
     return view('diagnosa_input');
 });
 
-Route::get('/berandaadmin', function () {
+Route::get('/beranda_pembudidaya', function () {
     return view('beranda_pembudidaya');
 });
 
+Route::get('/beranda_admin', function () {
+    return view('beranda_admin');
+});
 
 
 use App\Http\Controllers\RoboflowController;

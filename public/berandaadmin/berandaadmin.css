@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    height: 100vh;
+    background: linear-gradient(to right, #ffa4a4, #8f6363);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: black;
+    width: 95%;
+    position: absolute;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+nav {
+    margin-left: auto; /* Menambahkan margin-left auto */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    background-color: #5CA3AC;
+}
+
+.sidebar {
+    font-family: 'Poppins';
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to bottom, #ffa4a4, #573d3d);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidebar a {
+    font-family: 'Poppins';
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar a:last-child {
+    margin-bottom: 250  px;
+}
+
+
+.sidebar a:hover {
+    color: #5CA3AC; 
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.openbtn {
+    font-family: 'Poppins';
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #3c3c3c00;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    
+    background-color: #5CA3AC;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+
+.logoutbtn a {
+    color: #E81313;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-top: 40px; 
+}
+
+.logoutbtn a:hover {
+    color: #5CA3AC; /* Warna merah */
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+    height: 70%;
+  }
+
+  .buttonpack {
+
+    height: 20%;
+    margin-top: 50px;
+  } 
+
+  .button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #cce2cd00;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .button:hover {
+    background-color: #5CA3AC;
+    transform: translateY(-2px);
+}
+
+
+  .welcome {
+    font-size: 60px;
+    
+    font-family: 'Poppins';
+  }
+
+  .subtext b {
+    color: #3F5A9E;
+}
