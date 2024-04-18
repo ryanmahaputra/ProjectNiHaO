@@ -8,7 +8,7 @@
             <link href="\berandaadmin\berandaadmin.css" rel="stylesheet">
             <link href="/bootstrap-5.3.3-dist/css/bootstrap.css" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-            <script src="public\berandaadmin\berandaadmin.js"></script>
+            <script src="\berandaadmin\berandaadmin.js"></script>
             <script src="/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
             <style>
   
