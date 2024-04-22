@@ -94,6 +94,6 @@ public function index()
             'data' => $image,
         ]);
 
-        return view('result', ['data' => $response->json()]);
+        return view('diagnosa_output', ['data' => $response->json()]);
     }
 }

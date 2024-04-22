@@ -62,12 +62,12 @@
 
     <div class="result">    
         <b>Hasil Proses:</b> 
-
+        <pre>{{ json_encode($data, JSON_PRETTY_PRINT) }}</pre>
     </div>
 
     <div class="tombol">                    
     <button><b>Scan Ulang</b></button>
-    <button><b>Kembali</b></button>
+    <button onclick="window.location.href='/input'"><b>Kembali</b></button>
     </div>
 
     </div>
