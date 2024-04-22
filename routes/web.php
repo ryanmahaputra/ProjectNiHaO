@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoboflowController;
+use App\Http\Controllers\AkunController;
 
 
 Route::get('/home', function () {
@@ -29,10 +31,10 @@ Route::get('/login', function () {
     return view('login');
 });
 
-use App\Http\Controllers\RoboflowController;
+
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
 
-use App\Http\Controllers\AkunController;
+
 Route::post('/daftar', [AkunController::class, 'store']);
 
 Route::get('/', [RoboflowController::class, 'index']);
