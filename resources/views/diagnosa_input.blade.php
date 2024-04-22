@@ -50,14 +50,19 @@
                 </div>
             </header>
 
-            <form id="image-form" action="/process-image" method="POST" enctype="multipart/form-data">
 
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+@csrf
     <div class="upload-container">
         <label for="file-upload" class="custom-file-upload">
             <img id="uploaded-image" src="\diagnosa_input\mid.png" alt="Folder Icon" width="800" height="auto" />
         </label>
         <input id="file-upload" name="image" type="file" style="display:none;"/>
+        <button type="submit">Upload</button>
     </div>
+</form>
+
 
 </form>
 

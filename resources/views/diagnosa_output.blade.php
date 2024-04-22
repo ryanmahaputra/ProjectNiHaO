@@ -67,7 +67,7 @@
 
     <div class="tombol">                    
     <button><b>Scan Ulang</b></button>
-    <button onclick="window.location.href='/'"><b>Kembali</b></button>
+    <button onclick="window.location.href='/input'"><b>Kembali</b></button>
     </div>
 
     </div>
