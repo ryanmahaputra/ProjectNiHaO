@@ -93,7 +93,9 @@ public function index()
             'api_key' => 'AaxVQyfDGfG11CPPcsG1',
             'data' => $image,
         ]);
-
+        
         return view('diagnosa_output', ['data' => $response->json()]);
+        
+    
     }
 }
