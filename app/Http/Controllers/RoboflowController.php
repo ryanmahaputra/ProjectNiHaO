@@ -76,4 +76,26 @@ class RoboflowController extends Controller
     }
 }
 
+public function index()
+    {
+        return view('upload');
+    }
+
+    public function upload(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image',
+        ]);
+
+        $image = base64_encode(file_get_contents($request->file('image')));
+
+        $response = Http::post('https://detect.roboflow.com/tilapia-diseases/1?api_key=AaxVQyfDGfG11CPPcsG1', [
+            'api_key' => 'AaxVQyfDGfG11CPPcsG1',
+            'data' => $image,
+        ]);
+
+        return view('result', ['data' => $response->json()]);
+    }
 }
+
+

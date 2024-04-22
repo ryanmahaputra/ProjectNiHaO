@@ -15,18 +15,24 @@ use App\Http\Controllers\RoboflowController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-    Route::post('/process-image', [RoboflowController::class, 'processImage']);
-Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
-    
+Route::middleware('auth:sanctum')->group(function () {
+    // Route::post('/process-image', [RoboflowController::class, 'processImage']);
+    // Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
+    Route::get('/', [RoboflowController::class, 'index']);
+Route::post('/upload', [RoboflowController::class, 'upload']);
 });
 
-Route::middleware('jwt.auth')->get('/user', function (Request $request) {
-    return $request->user();
-    
+Route::middleware('jwt.auth')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+        Route::get('/', [RoboflowController::class, 'index']);
+Route::post('/upload', [RoboflowController::class, 'upload']);
+    });
 });
 
 
-Route::post('/process-image', [RoboflowController::class, 'processImage']);
-Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
+// Route::post('/process-image', [RoboflowController::class, 'processImage']);
+// Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
+
+Route::get('/', [RoboflowController::class, 'index']);
+Route::post('/upload', [RoboflowController::class, 'upload']);

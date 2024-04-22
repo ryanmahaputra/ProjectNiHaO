@@ -5,10 +5,10 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Nihao! Selamat Datang</title>
-            <link href="\header\header.css" rel="stylesheet">
+            <link href="\diagnosa_output\diagnosa_output.css" rel="stylesheet">
             <link href="/bootstrap-5.3.3-dist/css/bootstrap.css" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-            <script src="\header\header.js"></script>
+            <script src="\diagnosa_output\diagnosa_output.js"></script>
             <script src="/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
             <style>
 
@@ -50,19 +50,34 @@
                 </div>
             </header>
 
-            <form id="image-form" action="/process-image" method="POST" enctype="multipart/form-data">
+
+
+
 
     <div class="upload-container">
+
         <label for="file-upload" class="custom-file-upload">
-            <img id="uploaded-image" src="\diagnosa_input\mid.png" alt="Folder Icon" width="800" height="auto" />
+        <img id="uploaded" src="\diagnosa_output\Rectangle11.png" alt="Folder Icon" width="600" height="auto" />
         </label>
-        <input id="file-upload" name="image" type="file" style="display:none;"/>
+        </div>
+
+
+    <div class="gabung">
+
+    <div class="result">    
+        <b>Hasil Proses:</b> 
+
     </div>
 
-</form>
+    <div class="tombol">                    
+    <button><b>Scan Ulang</b></button>
+    <button><b>Kembali</b></button>
+    </div>
+
+    </div>
 
 <script>
-    
+ 
 </script>
 
         </body>
