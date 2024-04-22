@@ -10,6 +10,5 @@
     <input type="file" name="image">
     <button type="submit">Upload</button>
 </form>
-
 </body>
 </html>

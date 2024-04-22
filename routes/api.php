@@ -30,9 +30,6 @@ Route::post('/upload', [RoboflowController::class, 'upload']);
     });
 });
 
-
-// Route::post('/process-image', [RoboflowController::class, 'processImage']);
-// Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
-
+Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
 Route::get('/', [RoboflowController::class, 'index']);
 Route::post('/upload', [RoboflowController::class, 'upload']);

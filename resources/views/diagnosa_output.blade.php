@@ -50,10 +50,6 @@
                 </div>
             </header>
 
-
-
-
-
     <div class="upload-container">
 
         <label for="file-upload" class="custom-file-upload">

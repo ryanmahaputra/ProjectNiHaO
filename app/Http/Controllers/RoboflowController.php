@@ -97,5 +97,3 @@ public function index()
         return view('result', ['data' => $response->json()]);
     }
 }
-
-
