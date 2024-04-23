@@ -4,7 +4,7 @@
         <head> 
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Nihao! Hasil Scan</title>
+            <title>Nihao! Scan Ikan Nilamu!</title>
             <link href="\diagnosa_input\diagnosa_input.css" rel="stylesheet">
             <link href="/bootstrap-5.3.3-dist/css/bootstrap.css" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -30,14 +30,14 @@
                         <li><a href="#about">About</a></li>
                     </ul>
                 </nav>
-            
+
                 <div id="mySidebar" class="sidebar">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <a href="#"><b><u>Profil</u></b></a>
                     <a href="#"><b><u>Ganti Password</u></b></a>
                     <a href="#"><b><u>Kententuan Layanan</u></b></a>
                     <a href="#"><b><u>Kebijakan Privasi</u></b></a>
-                   
+              
                     <div class="logoutbtn"> 
                     <a href="#"><b><u>Log Out</u></b></a>
                     </div>
