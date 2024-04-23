@@ -5,10 +5,10 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Nihao! Selamat Datang</title>
-            <link href="\header\header.css" rel="stylesheet">
+            <link href="\diagnosa_input\diagnosa_input.css" rel="stylesheet">
             <link href="/bootstrap-5.3.3-dist/css/bootstrap.css" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-            <script src="\header\header.js"></script>
+            <script src="\diagnosa_input\diagnosa_input.js"></script>
             <script src="/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
             <style>
 
@@ -61,6 +61,8 @@
         <input id="file-upload" name="image" type="file" style="display:none;"/>
         <button type="submit">Upload</button>
     </div>
+
+    
 </form>
 
 

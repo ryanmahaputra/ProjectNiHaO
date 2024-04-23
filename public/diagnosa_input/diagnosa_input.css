@@ -85,11 +85,9 @@ nav ul li a:hover {
     display: block;
     transition: 0.3s;
 }
-
 .sidebar a:last-child {
-    margin-bottom: 250px;
+    margin-bottom: 250  px;
 }
-
 
 
 .sidebar a:hover {
@@ -138,34 +136,10 @@ nav ul li a:hover {
 }
 
 .logoutbtn a:hover {
-    color: #5CA3AC;
+    color: #5CA3AC; /* Warna merah */
 }
 
-
-.upload-container {
-    background-color: #000000; 
-    border-radius: 20px;
-    padding: 50px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.uploaded-image image{
     cursor: pointer;
-  }
-  
-  .custom-file-upload {
-    cursor: pointer;
-    display: inline-block;
-  }
-  
-  .custom-file-upload img {
-    width: 40px;
-    height: auto;
-    margin-bottom: 10px;
 }
 
-  
-  .custom-file-upload p {
-    margin: 0;
-    font-size: 16px;
-    color: #000; 
-    cursor: pointer;
-  }

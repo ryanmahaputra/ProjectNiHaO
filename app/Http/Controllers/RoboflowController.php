@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class RoboflowController extends Controller
 {
@@ -86,16 +87,23 @@ public function index()
         $request->validate([
             'image' => 'required|image',
         ]);
-
-        $image = base64_encode(file_get_contents($request->file('image')));
-
+    
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+    
+        // Simpan gambar ke direktori public/diagnosa_output
+        $image->move(public_path('diagnosa_output'), $imageName);
+    
+        // Membaca file gambar sebagai string dan mengkonversinya ke base64
+        $imageData = base64_encode(file_get_contents(public_path('diagnosa_output/' . $imageName)));
+    
         $response = Http::post('https://detect.roboflow.com/tilapia-diseases/1?api_key=AaxVQyfDGfG11CPPcsG1', [
             'api_key' => 'AaxVQyfDGfG11CPPcsG1',
-            'data' => $image,
+            'image' => $imageData,
         ]);
-        
-        return view('diagnosa_output', ['data' => $response->json()]);
-        
     
+        return view('diagnosa_output', ['data' => $response->json(), 'imageName' => $imageName]);
     }
+    
+
 }

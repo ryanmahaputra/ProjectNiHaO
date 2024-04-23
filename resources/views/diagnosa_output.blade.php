@@ -51,9 +51,8 @@
             </header>
 
     <div class="upload-container">
-
         <label for="file-upload" class="custom-file-upload">
-        <img id="uploaded" src="\diagnosa_output\Rectangle11.png" alt="Folder Icon" width="600" height="auto" />
+        <img id="uploaded" src="/diagnosa_output/{{ $imageName }}" alt="Uploaded Image" width="600" height="auto" />
         </label>
         </div>
 

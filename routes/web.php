@@ -5,7 +5,7 @@ use App\Http\Controllers\RoboflowController;
 use App\Http\Controllers\AkunController;
 
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('tampilanutama');
     
 });
@@ -37,5 +37,5 @@ Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnect
 
 Route::post('/daftar', [AkunController::class, 'store']);
 
-Route::get('/', [RoboflowController::class, 'index']);
+Route::get('/test', [RoboflowController::class, 'index']);
 Route::post('/upload', [RoboflowController::class, 'upload']);
