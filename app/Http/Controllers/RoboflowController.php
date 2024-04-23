@@ -82,28 +82,26 @@ public function index()
         return view('upload');
     }
 
-    public function upload(Request $request)
-    {
-        $request->validate([
-            'image' => 'required|image',
-        ]);
-    
-        $image = $request->file('image');
-        $imageName = time() . '.' . $image->getClientOriginalExtension();
-    
-        // Simpan gambar ke direktori public/diagnosa_output
-        $image->move(public_path('diagnosa_output'), $imageName);
-    
-        // Membaca file gambar sebagai string dan mengkonversinya ke base64
-        $imageData = base64_encode(file_get_contents(public_path('diagnosa_output/' . $imageName)));
-    
-        $response = Http::post('https://detect.roboflow.com/tilapia-diseases/1?api_key=AaxVQyfDGfG11CPPcsG1', [
-            'api_key' => 'AaxVQyfDGfG11CPPcsG1',
-            'image' => $imageData,
-        ]);
-    
-        return view('diagnosa_output', ['data' => $response->json(), 'imageName' => $imageName]);
-    }
-    
+   public function upload(Request $request)
+{
+    $request->validate([
+        'image' => 'required|image',
+    ]);
+
+    $image = $request->file('image');
+    $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+    $image->move(public_path('diagnosa_output'), $imageName);
+
+    $imageData = base64_encode(file_get_contents(public_path('diagnosa_output/' . $imageName)));
+
+    $response = Http::post('https://detect.roboflow.com/tilapia-diseases/1?api_key=AaxVQyfDGfG11CPPcsG1', [
+        'api_key' => 'AaxVQyfDGfG11CPPcsG1',
+        'image' => $imageData,
+    ]);
+
+    return view('diagnosa_output', ['data' => $response->json(), 'imageName' => $imageName]);
+}
+
 
 }
