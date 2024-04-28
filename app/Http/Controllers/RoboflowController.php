@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use SebastianBergmann\Type\TrueType;
 
 class RoboflowController extends Controller
 {
     public function checkApiConnection()
     {
-        
+
         $url = 'https://api.roboflow.com/https://detect.roboflow.com/tilapia-diseases/1?api_key=AaxVQyfDGfG11CPPcsG1';
-        $apiKey = 'AaxVQyfDGfG11CPPcsG1'; 
+        $apiKey = 'AaxVQyfDGfG11CPPcsG1';
 
         try {
             $response = Http::withHeaders([
@@ -53,7 +54,7 @@ class RoboflowController extends Controller
             'Accept' => 'application/json',
         ])->attach('image', $request->file('image')->path(), $request->file('image')->getClientOriginalName())
           ->post($url);
-        
+
 
         if ($response->successful()) {
             return response()->json([
@@ -82,7 +83,7 @@ public function index()
         return view('upload');
     }
 
-   public function upload(Request $request)
+    public function upload(Request $request)
 {
     $request->validate([
         'image' => 'required|image',
@@ -93,15 +94,55 @@ public function index()
 
     $image->move(public_path('diagnosa_output'), $imageName);
 
-    $imageData = base64_encode(file_get_contents(public_path('diagnosa_output/' . $imageName)));
+    $imageDataPath = public_path('diagnosa_output/' . $imageName);
 
-    $response = Http::post('https://detect.roboflow.com/tilapia-diseases/1?api_key=AaxVQyfDGfG11CPPcsG1', [
-        'api_key' => 'AaxVQyfDGfG11CPPcsG1',
-        'image' => $imageData,
-    ]);
+    $pythonScript = public_path('diagnosa_output/diagnosa.py');
 
-    return view('diagnosa_output', ['data' => $response->json(), 'imageName' => $imageName]);
+    // Jalankan proses eksternal menggunakan proc_open()
+    $descriptorspec = [
+        0 => ["pipe", "r"], // stdin
+        1 => ["pipe", "w"], // stdout
+        2 => ["pipe", "w"]  // stderr
+    ];
+
+    $process = proc_open("python $pythonScript $imageDataPath", $descriptorspec, $pipes);
+
+    if (is_resource($process)) {
+        // Baca output dari proses
+        $output = stream_get_contents($pipes[1]);
+        fclose($pipes[1]);
+
+        // Tutup proses
+        proc_close($process);
+
+        // Menghilangkan bagian atas dan bawah dari output
+        $startPos = strpos($output, "{");
+        $endPos = strrpos($output, "}");
+
+        // Ambil bagian yang relevan dari output
+        $relevantOutput = substr($output, $startPos, $endPos - $startPos + 1);
+
+        // Konversi ke format JSON
+        $relevantOutputJSON = json_decode($relevantOutput, true);
+
+        // Tampilkan dalam format yang lebih mudah dibaca
+        // dd($relevantOutputJSON);
+
+        // Ambil bagian 'predictions' dari respons
+        $predictions = $relevantOutputJSON['predictions'];
+
+        // Kemudian, Anda dapat menggunakan $predictions sesuai kebutuhan Anda
+
+        return view('diagnosa_output', ['data' => $predictions, 'imageName' => $imageName]);
+    } else {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Failed to execute Python script.'
+        ], 500);
+    }
 }
+
+
 
 
 }
