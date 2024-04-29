@@ -35,12 +35,8 @@ Route::get('/kamera', function () {
     return view('diagnosa_kamera');
 });
 
-
-
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
-
-
 Route::post('/daftar', [AkunController::class, 'store']);
-
 Route::get('/test', [RoboflowController::class, 'index']);
 Route::post('/upload', [RoboflowController::class, 'upload']);
+

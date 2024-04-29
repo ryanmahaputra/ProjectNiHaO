@@ -68,9 +68,6 @@
     </div>
 </form>
 
-
-
-
     <script>
         const video = document.getElementById('videoElement');
         const canvas = document.getElementById('canvas');

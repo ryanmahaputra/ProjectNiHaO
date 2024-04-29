@@ -9,3 +9,16 @@ function closeNav() {
   document.getElementById("main").style.marginLeft = "0";
 }
 
+function showCamera() {
+  // Menampilkan kamera-container
+  document.getElementById('kamera-container').style.display = 'block';
+
+  // Mengambil izin akses kamera
+  navigator.mediaDevices.getUserMedia({ video: true })
+      .then((stream) => {
+          video.srcObject = stream;
+      })
+      .catch((err) => {
+          console.error('Gagal mengakses kamera:', err);
+      });
+}

@@ -160,3 +160,16 @@ nav ul li a:hover {
     background-color: #5CA3AC;
     transform: translateY(-2px);
 }
+
+
+.kamera-container {
+    height: 10px;
+    width: 0;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+

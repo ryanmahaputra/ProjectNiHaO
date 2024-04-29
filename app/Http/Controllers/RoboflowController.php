@@ -85,7 +85,6 @@ public function index()
 
     public function upload(Request $request)
 {
-    $imageData = $request->input('image');
     $request->validate([
         'image' => 'required|image',
     ]);
@@ -142,5 +141,8 @@ public function index()
         ], 500);
     }
 }
+
+
+
 
 }
