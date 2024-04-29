@@ -129,7 +129,14 @@ public function index()
         // dd($relevantOutputJSON);
 
         // Ambil bagian 'predictions' dari respons
-        $predictions = $relevantOutputJSON['predictions'];
+        if (isset($relevantOutputJSON['predictions'])) {
+            $predictions = $relevantOutputJSON['predictions'];
+        } else {
+            // Jika tidak ada, kita isi dengan array JSON kosong
+            $predictions = json_encode(array(
+                "Error" => "Silakan Scan Kembali",
+            ));
+        }
 
         // Kemudian, Anda dapat menggunakan $predictions sesuai kebutuhan Anda
 
