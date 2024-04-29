@@ -62,7 +62,7 @@
         <input id="file-upload" name="image" type="file" style="display:none;"/>
 
         <div class="butup">
-            <button type="button" onclick="captureImage()"><b>Ambil Gambar</b></button>
+            <button type="button"><b>Ambil Gambar</b></button>
             <button type="button" onclick="window.location.href='input'"><b>Kembali</b></button>
         </div>
     </div>
