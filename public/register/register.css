@@ -136,14 +136,15 @@ nav ul li a:hover {
 }
 
 .logoutbtn a:hover {
-    color: #5CA3AC; /* Warna merah */
+    color: #5CA3AC; 
 }
 
-.uploaded-image image{
-    cursor: pointer;
+.kontainer_form {
+    height: 180px;  
+    font-family: 'Poppins';  
 }
 
-.butup button {
+.button_daftar button{
     margin: 10px;
     padding: 10px 20px;
     background-color: #cce2cd3a;
@@ -153,10 +154,13 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    font-family: 'Poppins';
+   
 }
 
-.butup button:hover {
+.button_daftar button:hover {
     background-color: #5CA3AC;
     transform: translateY(-2px);
+
+
 }
+

@@ -31,6 +31,11 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/kamera', function () {
+    return view('diagnosa_kamera');
+});
+
+
 
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
 

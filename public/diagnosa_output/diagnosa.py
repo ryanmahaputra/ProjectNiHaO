@@ -5,7 +5,7 @@ import sys
 
 def predict_image(image_path):
     # Initialize Roboflow with API key
-    rf = Roboflow(api_key="Bq2XXC7KTm2QikWJXDdY")
+    rf = Roboflow(api_key="AaxVQyfDGfG11CPPcsG1")
 
     # Access the project and model
     project = rf.workspace().project("tilapia-diseases")
