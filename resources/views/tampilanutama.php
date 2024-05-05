@@ -44,8 +44,8 @@
                         <p><b>Analisislah sesuai dengan keinginan hati, daftar dan dapatkan fitur menarik lainnya.</b></p>
                         <p><b>
                         <div class="buttons">
-                                <button><b>Registrasi</b></button>
-                                <button><b>Login</b></button>
+                                <button onclick="window.location.href='daftar'"><b>Register</b></button>
+                                <button onclick="window.location.href='login'"><b>Login</b></button>
                         </div>
                 </div>            
             </div>  

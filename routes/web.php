@@ -27,16 +27,29 @@ Route::get('/beranda_admin', function () {
 });
 
 
+Route::get('/daftar', function () {
+    return view('daftar');
+});
+
 Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/kamera', function () {
-    return view('diagnosa_kamera');
+Route::get('/komu', function () {
+    return view('komunitas');
 });
 
+
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
-Route::post('/daftar', [AkunController::class, 'store']);
 Route::get('/test', [RoboflowController::class, 'index']);
 Route::post('/upload', [RoboflowController::class, 'upload']);
 
+
+// routes/web.php
+
+use App\Http\Controllers\RegistrasiController;
+use App\Http\Controllers\LoginController;
+
+
+Route::post('/daftar', [RegistrasiController::class, 'daftar'])->name('register');
+Route::post('/login', [LoginController::class, 'login'])->name('login');

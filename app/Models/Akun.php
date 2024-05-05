@@ -7,13 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Akun extends Model
 {
-    use HasFactory;
-    protected $table = 'akun';
-    public $timestamps = false;
-    protected $fillable = [
-        'username',
-        'password',
-    ];
-    
+    protected $fillable = ['email', 'username', 'password', 'role'];
 }
-

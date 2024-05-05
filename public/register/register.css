@@ -139,11 +139,6 @@ nav ul li a:hover {
     color: #5CA3AC; 
 }
 
-.kontainer_form {
-    height: 180px;  
-    font-family: 'Poppins';  
-}
-
 .button_daftar button{
     margin: 10px;
     padding: 10px 20px;
@@ -154,13 +149,54 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-   
+    margin-left: 100px;
 }
 
 .button_daftar button:hover {
     background-color: #5CA3AC;
     transform: translateY(-2px);
-
-
+    
 }
 
+.kontainer_form {
+    display: flex;
+    flex-direction: column;
+    height: 180px;  
+    font-family: 'Poppins';  
+    height: 300px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: inline-block;
+    margin-bottom: 5px;
+    
+}
+
+.form-control {
+    width: 100%;
+    padding: 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.form-input {
+    width: 100%;
+    padding: 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    background-size: 15px;
+    font-family: 'Poppins';  
+}
+
+.buttons button {
+    margin-top: 20px;
+}

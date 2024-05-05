@@ -24,7 +24,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
+                        <li onclick="window.location.href='/'"><a href="#home">Home</a></li>
                         <li><a href="#blog">Blog</a></li>
                         <li><a href="#service">Service</a></li>
                         <li><a href="#about">About</a></li>
@@ -39,7 +39,7 @@
                     <a href="#"><u>Kebijakan Privasi</u></a>
                    
                     <div class="logoutbtn"> 
-                    <a href="#"><u>Log Out</u></a>
+                     <a href="/login"><b><u>Log Out</u></b></a>
                     </div>
 
                 </div>
@@ -59,13 +59,15 @@
             </div>
             
             <div class="buttonpack">
-                <button class="button">
+                <button class="button" onclick="window.location.href='input'">
             <img id="uploaded-image" src="\berandapembudidaya\Group 1.png" alt="Folder Icon" width="400" height="auto" />
                 </button>
                 <button class="button">
+
                 <img id="uploaded-image" src="\berandapembudidaya\Group 2.png" alt="Folder Icon" width="400" height="auto" />
                 </button>
-                <button class="button">
+                
+                <button class="button" onclick="window.location.href='komu'">
                 <img id="uploaded-image" src="\berandapembudidaya\Group 3.png" alt="Folder Icon" width="400" height="auto" />
                 </button>
             </div>

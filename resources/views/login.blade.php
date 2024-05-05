@@ -19,7 +19,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li onclick="window.location.href='/'"><a href="#home">Home</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#service">Service</a></li>
                 <li><a href="#about">About</a></li>
@@ -30,31 +30,28 @@
 
     <div class="gabung">
         <div class="container">
-            <div class="welcome">
-                <h1><b>Selamat Datang</b></h1>
-
-                <div class="registrasi">
-                    <p><b>Silakan Login!</b></p>
-
+          
                     <!-- Form Login -->
-                    <form action="/halamanlogin/proseslogin.php" method="post">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                    <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="kontainer_form">
+                        <div class="form-group">
+                            <label class="form-label" for="form3Example4cg"><b>Username:</b></label>
+                            <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="username" required />
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                        <div class="form-group">
+                            <label class="form-label" for="form3Example4cg"><b>Password:</b></label>
+                            <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password" required />
                         </div>
                         <div class="buttons">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary"><b>Login</b></button>
                         </div>
-                    </form>
+                    </div>
+                </form>
+
                     
                     <!-- Link Registrasi -->
-                    <div class="registrasi-link">
-                        <p>Belum memiliki akun? Registrasi disini</p>
-                    </div>
+            
                 </div>
             </div>
         </div>
