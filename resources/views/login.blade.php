@@ -27,22 +27,38 @@
         </nav>
     </header>
 
+    
 
     <div class="gabung">
         <div class="container">
+
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </div>
+@endif
           
                     <!-- Form Login -->
                     <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="kontainer_form">
-                        <div class="form-group">
-                            <label class="form-label" for="form3Example4cg"><b>Username:</b></label>
-                            <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="username" required />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="form3Example4cg"><b>Password:</b></label>
-                            <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password" required />
-                        </div>
+                    <div class="form-group">
+                        <label class="form-label" for="form3Example4cg"><b>Username:</b></label>
+                        <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="username" value="{{ old('username') }}" required />
+                    </div>
+                    <!-- Input untuk password -->
+                    <div class="form-group">
+                        <label class="form-label" for="form3Example4cg"><b>Password:</b></label>
+                        <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password" value="{{ old('password') }}" required />
+                    </div>
+
+                        <div class="ingatsaya">
+                            <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                            <label class="form-check-label" for="remember">Ingat Saya</label>
+                        </div>  
+
                         <div class="buttons">
                             <button type="submit" class="btn btn-primary"><b>Login</b></button>
                         </div>
