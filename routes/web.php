@@ -39,6 +39,10 @@ Route::get('/komu', function () {
     return view('komunitas');
 });
 
+Route::get('/lupa', function () {
+    return view('lupapassword');
+});
+
 
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
 Route::get('/test', [RoboflowController::class, 'index']);
