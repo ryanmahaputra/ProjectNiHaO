@@ -26,7 +26,7 @@ class RegistrasiController extends Controller
             'role' => $request->role,
         ]);
 
-        // Tambahkan pesan sukses atau redirect ke halaman lain
+
         return redirect()->back()->with('success', 'Akun berhasil didaftarkan!');
     }
 }

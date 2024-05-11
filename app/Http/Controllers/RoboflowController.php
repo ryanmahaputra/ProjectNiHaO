@@ -91,7 +91,7 @@ public function index()
 
     $image = $request->file('image');
     $imageName = time() . '.' . $image->getClientOriginalExtension();
-
+    
     $image->move(public_path('diagnosa_output'), $imageName);
 
     $imageDataPath = public_path('diagnosa_output/' . $imageName);
@@ -131,25 +131,28 @@ public function index()
         // Ambil bagian 'predictions' dari respons
         if (isset($relevantOutputJSON['predictions'])) {
             $predictions = $relevantOutputJSON['predictions'];
+        
+            // Inisialisasi array untuk menyimpan nilai "class"
+            $classes = ["Kondisi Ikan:"];
+        
+            // Iterasi melalui prediksi dan hanya menyimpan nilai "class"
+            foreach ($predictions as $prediction) {
+                if (isset($prediction['class'])) {
+                    $classes[] = $prediction['class'];
+                }
+            }
+        
+            // Kemudian, Anda dapat menggunakan $classes sesuai kebutuhan Anda
+        
+            return view('diagnosa_output', ['data' => $classes, 'imageName' => $imageName]);
         } else {
-            // Jika tidak ada, kita isi dengan array JSON kosong
-            $predictions = json_encode(array(
-                "Error" => "Silakan Scan Kembali",
-            ));
+            // Jika tidak ada prediksi, kembalikan pesan kesalahan
+            return response()->json([
+                'status' => 'error',
+                'message' => 'No predictions found.'
+            ], 500);
         }
-
-        // Kemudian, Anda dapat menggunakan $predictions sesuai kebutuhan Anda
-
-        return view('diagnosa_output', ['data' => $predictions, 'imageName' => $imageName]);
-    } else {
-        return response()->json([
-            'status' => 'error',
-            'message' => 'Failed to execute Python script.'
-        ], 500);
-    }
 }
-
-
-
+}
 
 }

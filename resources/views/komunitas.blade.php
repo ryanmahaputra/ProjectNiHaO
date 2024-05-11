@@ -52,12 +52,21 @@
     </header>
 
 
+<div class="pertama">
 
     <div class="welcom">
                 <div class="welcome"><B>Fitur Komunitas Pembudidaya!</B></div>
                 <div class="subtext"><b>Nihao! Pembudidaya, di laman ini anda bisa berbagi pengetahuan atau cerita dengan Pembudidaya lainnya</b>            
     </div>
 
+    <div class="postkontent">
+                <button class="button" onclick="window.location.href='postingan'">
+            <img id="uploaded-image" src="\komunitas\button_post.png" alt="Folder Icon" width="400" height="auto" />
+                </button>
+    
+    </div>
+
+</div> 
 
 <div class="komusi">
     <div class="container profile">
@@ -105,9 +114,7 @@
                     <hr class="mb-1 opacity-1" />
 
                     <div class="row text-center fw-bold">
-                        <div class="col">
-                            <a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2"> <i class="far fa-thumbs-up me-1 d-block d-sm-inline"></i> Likes </a>
-                        </div>
+                        
                         <div class="col">
                             <a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2"> <i class="far fa-comment me-1 d-block d-sm-inline"></i> Comment </a>
                         </div>
@@ -179,9 +186,7 @@
                     <hr class="mb-1 opacity-1" />
 
                     <div class="row text-center fw-bold">
-                        <div class="col">
-                            <a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2"> <i class="far fa-thumbs-up me-1 d-block d-sm-inline"></i> Likes </a>
-                        </div>
+                
                         <div class="col">
                             <a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2"> <i class="far fa-comment me-1 d-block d-sm-inline"></i> Comment </a>
                         </div>

@@ -39,10 +39,16 @@ Route::get('/komu', function () {
     return view('komunitas');
 });
 
+<<<<<<< HEAD
 Route::get('/lupa', function () {
     return view('lupapassword');
 });
 
+=======
+Route::get('/postingan', function () {
+    return view('postkonten');
+});
+>>>>>>> 9ee10f5c196ded650fb0cc6f3efa9e6554abb038
 
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
 Route::get('/test', [RoboflowController::class, 'index']);
@@ -57,3 +63,5 @@ use App\Http\Controllers\LoginController;
 
 Route::post('/daftar', [RegistrasiController::class, 'daftar'])->name('register');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+
