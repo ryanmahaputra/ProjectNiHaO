@@ -39,16 +39,19 @@ Route::get('/komu', function () {
     return view('komunitas');
 });
 
-<<<<<<< HEAD
+Route::get('/postingan', function () {
+    return view('postkonten');
+});
+
 Route::get('/lupa', function () {
     return view('lupapassword');
 });
 
-=======
-Route::get('/postingan', function () {
-    return view('postkonten');
+Route::get('/verif', function () {
+    return view('verifikasi_otp');
 });
->>>>>>> 9ee10f5c196ded650fb0cc6f3efa9e6554abb038
+
+
 
 Route::get('/check-api-connection', [RoboflowController::class, 'checkApiConnection']);
 Route::get('/test', [RoboflowController::class, 'index']);

@@ -12,8 +12,8 @@ class RegistrasiController extends Controller
     public function daftar(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|unique:akun',
-            'username' => 'required|unique:akun',
+            'email' => 'required|email|unique:akuns',
+            'username' => 'required|unique:akuns',
             'password' => 'required|min:6',
             'konfirmasi_password' => 'required|same:password',
             'role' => 'required|in:Pembudidaya,Komunitas',

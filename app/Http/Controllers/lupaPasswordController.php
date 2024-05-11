@@ -1,40 +1,56 @@
 <?php
-// Sambungkan ke database
-$koneksi = mysqli_connect("localhost", "root", "", "laravel");
+// lupaPasswordController.php
 
-// Fungsi untuk mengirim email
-function kirimEmail($email, $kode_otp) {
-    // Sesuaikan dengan pengaturan server email Anda
-    $to = $email;
-    $subject = "Kode OTP untuk Reset Password";
-    $message = "Berikut adalah kode OTP Anda: $kode_otp";
-    $headers = "From: your@example.com" . "\r\n" .
-               "Reply-To: your@example.com" . "\r\n" .
-               "X-Mailer: PHP/" . phpversion();
+// Fungsi untuk mengirim email dengan kode OTP
+function kirimKodeOTP($email, $otp) {
+    // Lakukan pengaturan email, misalnya menggunakan PHPMailer atau fungsi mail() bawaan PHP
+    // Di sini kita akan menggunakan fungsi mail() bawaan PHP sebagai contoh
+
+    // Generate subjek dan pesan email
+    $subject = 'Kode OTP untuk Reset Password';
+    $message = 'Berikut adalah kode OTP Anda: ' . $otp;
 
     // Kirim email
-    return mail($to, $subject, $message, $headers);
+    $headers = 'From: your-email@example.com'; // Ganti dengan alamat email Anda
+    $mailSent = mail($email, $subject, $message, $headers);
+
+    return $mailSent;
 }
 
-if(isset($_POST['submit'])) {
-    $email = $_POST['email'];
+// Lakukan validasi jika request merupakan POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Periksa apakah email telah dikirimkan
+    if (isset($_POST["email"])) {
+        // Ambil email dari input form
+        $email = $_POST["email"];
 
-    // Generate OTP
-    $kode_otp = rand(100000, 999999);
+        // Generate kode OTP secara acak (di sini kita menggunakan rentang 100000 hingga 999999)
+        $otp = rand(100000, 999999);
 
-    // Simpan kode OTP ke database untuk verifikasi nantinya
-    $query = "INSERT INTO otps (email, kode_otp) VALUES ('$email', '$kode_otp')";
-    $result = mysqli_query($koneksi, $query);
-
-    if($result) {
         // Kirim kode OTP melalui email
-        if(kirimEmail($email, $kode_otp)) {
-            echo "Kode OTP telah dikirimkan ke email Anda.";
+        $mailSent = kirimKodeOTP($email, $otp);
+
+        // Periksa apakah email berhasil dikirim
+        if ($mailSent) {
+            // Simpan kode OTP dan email dalam sesi untuk digunakan pada halaman verifikasi
+            session_start();
+            $_SESSION['otp'] = $otp;
+            $_SESSION['email'] = $email;
+
+            // Redirect pengguna ke halaman verifikasi OTP
+            header('Location: verifikasi_otp.php');
+            exit;
         } else {
-            echo "Gagal mengirimkan kode OTP. Silakan coba lagi.";
+            // Jika gagal mengirim email, tampilkan pesan kesalahan
+            echo "Gagal mengirim email. Silakan coba lagi.";
         }
     } else {
-        echo "Gagal menyimpan kode OTP. Silakan coba lagi.";
+        // Jika email tidak ditemukan pada request, tampilkan pesan kesalahan
+        echo "Email tidak ditemukan.";
     }
+} else {
+    // Jika bukan request POST, redirect pengguna ke halaman lupa password
+    header('Location: lupaPasswordForm.php');
+    exit;
 }
 ?>
