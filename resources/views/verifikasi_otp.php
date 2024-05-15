@@ -31,7 +31,7 @@
         <div class="container">
             <div class="form-container">
                 <!-- Form Verifikasi Kode OTP -->
-                <form method="POST" action="proses_verifikasi_controller.php">
+                <form method="POST" action="File Controller">
                     <div class="kontainer_form">
                         <div class="form-group">
                             <label class="form-label" for="otp"><b>Kode OTP:</b></label>

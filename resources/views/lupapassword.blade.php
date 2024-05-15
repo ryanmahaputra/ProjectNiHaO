@@ -31,7 +31,7 @@
         <div class="container">
             <div class="form-container">
                 <!-- Form Lupa Password -->
-                <form id="otpForm" method="POST" action="verifikasiOTP.php">
+                <form id="otpForm" method="POST" action="File Controller">
                     <div class="kontainer_form">
                         <div class="form-group">
                             <label class="form-label" for="email"><b>Email:</b></label>
