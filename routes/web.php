@@ -44,11 +44,19 @@ Route::get('/postingan', function () {
 });
 
 Route::get('/lupa', function () {
-    return view('lupapassword');
+    return view('tampilanawal_lupapassword');
 });
 
 Route::get('/verif', function () {
     return view('verifikasi_otp');
+});
+
+Route::get('/otp', function () {
+    return view('OTP_Fonnte');
+});
+
+Route::get('/reset', function () {
+    return view('reset_password');
 });
 
 
