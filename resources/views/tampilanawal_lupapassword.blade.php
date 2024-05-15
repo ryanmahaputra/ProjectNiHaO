@@ -34,7 +34,7 @@
                 <form id="otpForm" method="POST" action="File Controller">
                     <div class="kontainer_form">
                         <div class="form-group">
-                            <label class="form-label" for="email"><b>Email:</b></label>
+                            <label class="form-label" for="email"><b>Nomor Whatsapp</b></label>
                             <input type="email" id="email" class="form-control form-control-lg" name="email" required />
                         </div>
                         <div class="buttons">
