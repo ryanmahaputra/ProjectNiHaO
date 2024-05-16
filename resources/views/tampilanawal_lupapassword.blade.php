@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="logo">
             <img src="/tampilanutama/headercamera.png" alt="NIHAO Logo">
@@ -31,20 +30,22 @@
         <div class="container">
             <div class="form-container">
                 <!-- Form Lupa Password -->
-                <form id="otpForm" method="POST" action="File Controller">
+                <form id="otpForm" method="POST" action="{{ route('requestOtp') }}">
+                    @csrf
                     <div class="kontainer_form">
                         <div class="form-group">
-                            <label class="form-label" for="email"><b>Nomor Whatsapp</b></label>
-                            <input type="email" id="email" class="form-control form-control-lg" name="email" required />
+                            <label class="form-label" for="nomor"><b>Nomor Whatsapp</b></label>
+                            <input placeholder="62812xxxx" type="text" id="nomor" class="form-control form-control-lg" name="nomor" required />
                         </div>
                         <div class="buttons">
-                            <button type="button" onclick="generateAndRedirect()" class="btn btn-primary"><b>Kirim Kode OTP</b></button>
+                            <button type="submit" class="btn btn-primary"><b>Kirim Kode OTP</b></button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
     <script src="/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
 </body>
 

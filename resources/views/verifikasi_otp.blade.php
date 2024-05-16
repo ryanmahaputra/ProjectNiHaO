@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verifikasi Kode OTP - NiHaO</title>
+    <title>Verifikasi OTP - NiHaO</title>
     <link href="/lupapassword/lupapassword.css" rel="stylesheet">
     <link href="/bootstrap-5.3.3-dist/css/bootstrap.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
     <header>
         <div class="logo">
             <img src="/tampilanutama/headercamera.png" alt="NIHAO Logo">
@@ -30,8 +29,9 @@
     <div class="gabung">
         <div class="container">
             <div class="form-container">
-                <!-- Form Verifikasi Kode OTP -->
-                <form method="POST" action="File Controller">
+                <!-- Form Verifikasi OTP -->
+                <form id="verifyOtpForm" method="POST" action="{{ route('verifyOtp') }}">
+                    @csrf
                     <div class="kontainer_form">
                         <div class="form-group">
                             <label class="form-label" for="otp"><b>Kode OTP:</b></label>
@@ -45,6 +45,7 @@
             </div>
         </div>
     </div>
+
     <script src="/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
 </body>
 
